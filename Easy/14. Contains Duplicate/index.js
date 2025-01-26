@@ -1,15 +1,13 @@
 /**
  * @param {number[]} nums
- * @return {number}
+ * @return {boolean}
  */
-var majorityElement = function(nums) {
-    let candidate = null
-    let count = 0
-    for(let num of nums){
-        if(count===0){
-            candidate = num
+var containsDuplicate = function(nums) {
+    const sortedArray = nums.sort((a,b) => a-b)
+    for(let i=0; i<nums.length-1; i++){
+        if(nums[i]===nums[i+1]){
+            return true
         }
-        count += (num===candidate ? 1 : -1)
     }
-    return candidate
+    return false
 };
