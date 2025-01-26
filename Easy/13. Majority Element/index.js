@@ -1,16 +1,15 @@
 /**
- * @param {string} s
+ * @param {number[]} nums
  * @return {number}
  */
-var lengthOfLastWord = function(s) {
-  let str = s.trim()
-  let arr = []
-  for(let i=0; i<str.length; i++){
-      if(str[i]!==' '){
-          arr.push(str[i])
-      }else {
-          arr = []
-      }
-  }
-  return arr.length
+var majorityElement = function(nums) {
+    let candidate = null
+    let count = 0
+    for(let num of nums){
+        if(count===0){
+            candidate = num
+        }
+        count += (num===candidate ? 1 : -1)
+    }
+    return candidate
 };
