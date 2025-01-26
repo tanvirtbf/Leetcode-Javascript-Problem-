@@ -1,19 +1,16 @@
 /**
- * @param {number[]} prices
+ * @param {string} s
  * @return {number}
  */
-function maxProfit(prices) {
-    let minPrice = 999999; 
-    let maxProfit = 0;       
-  
-    for (let i = 0; i < prices.length; i++) {
-      if (prices[i] < minPrice) {
-        minPrice = prices[i];
-      } 
-      else {
-        maxProfit = Math.max(maxProfit, prices[i] - minPrice);
+var lengthOfLastWord = function(s) {
+  let str = s.trim()
+  let arr = []
+  for(let i=0; i<str.length; i++){
+      if(str[i]!==' '){
+          arr.push(str[i])
+      }else {
+          arr = []
       }
-    }
-  
-    return maxProfit;
   }
+  return arr.length
+};
